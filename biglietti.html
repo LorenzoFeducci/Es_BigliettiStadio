@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1 class="titolo">Biglietteria online</h1>
+    <div class="div_form">
+        <form action="gestioneacquisto.php" method="get">
+            <label for="nome">Nome:</label>
+            <br>
+            <input type="text" name="nome" placeholder="mario" required>
+            <br><br>
+            <label for="cognome">Cognome:</label>
+            <br>
+            <input type="text" name="cognome" placeholder="rossi" required>
+            <br><br>
+            <label for="codice_fiscale">Codice fiscale:</label>
+            <br>
+            <input type="text" name="codice_fiscale" placeholder="XXXXXXXXXXXXXXXX" required>
+            <br><br>
+            <label for="settore">Settore:</label>
+            <br>
+            <select name="settore">
+                <option value="curva">curva</option>
+                <option value="tribuna_centrale">tribuna centrale</option>
+                <option value="tribuna_donore">tribuna d'onore</option>
+            </select>
+            <br><br>
+            <label for="codice_sconto">Codice sconto(opzionale):</label>
+            <br>
+            <input type="text" name="codice_sconto" placeholder="xxxxxx">
+            <br><br>
+            <label for="biglietto_unico">Biglietto unico:</label>
+            <br>
+            <input type="radio" name="quantita" value="biglietto_unico" onclick="biglietto_unico()" checked>
+            <input type="radio" name="quantita" value="piu_biglietti" onclick="piu_biglietti()">
+            <div style="display: none; " id="quantita_biglietti_div">
+                <br><br>
+                <label for="codice_fiscale2">Codici fiscali aggiuntivi:</label>
+                <br><br>
+
+                <input style="display: block; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale2"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf1">
+                <input style="display: none; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale3"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf2">
+                <input style="display: none; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale4"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf3">
+                <input style="display: none; margin-left: auto; margin-right: auto;" type="text" name="codice_fiscale5"
+                    placeholder="XXXXXXXXXXXXXXXX" id="cf4">
+                <br><br>
+
+
+                <input style="width: 15%;" type="number" id="numero_codici_fiscali" name="numero_codici_fiscali"
+                    readonly value="1">
+                <button type="button" onclick="aggiungi_codice_fiscale()">+</button>
+                <button type="button" onclick="rimuovi_codice_fiscale()">-</button>
+
+            </div>
+            <br>
+            <input type="submit" name="fatto">
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
